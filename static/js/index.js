@@ -1,5 +1,5 @@
 const player = videojs("myVideo", {
-  sources: [{ src: "/static/video/video.mp4", type: "video/mp4" }],
+  sources: [{ src: "./static/video/video.mp4", type: "video/mp4" }],
   poster: "/static/img/thumbnail.png",
   controls: true,
   playsinline: true,
