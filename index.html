@@ -3,6 +3,7 @@
   <head>
     <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
     <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/videojs-overlay@3.1.0/dist/videojs-overlay.min.js"></script>
     <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
     <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
     <link rel="stylesheet" type="text/css" href="static/css/index.css" />
@@ -10,10 +11,9 @@
 
   <body>
     <video id="myVideo" class="video-js vjs-default-skin"></video>
-    <div id="ad">영상 속 여자가 입은 자켓이 궁금하다면?</div>
+    <div id="ad" style="position: fixed; z-index: 2; top: 10px; left: 20px">영상 속 여자가 입은 자켓이 궁금하다면?</div>
     <div>
-      <div id="t1"></div>
-      <div id="t2"></div>
+      <div id="time">현재 시간 : 0</div>
     </div>
   </body>
 

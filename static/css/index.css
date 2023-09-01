@@ -1,3 +1,10 @@
 #ad {
   display: none;
 }
+
+#customOverlay {
+  position: absolute;
+  top: 50%; /* 화면 상단 중앙으로 이동 */
+  left: 50%; /* 화면 중앙으로 이동 */
+  transform: translate(-50%, -50%); /* 가운데 정렬 */
+}
