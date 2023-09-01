@@ -13,11 +13,11 @@ player.on("timeupdate", () => {
 
   document.getElementById("t1").textContent = "현재 시간 : " + currentTime.toFixed(0);
 
-  if (currentTime > 4) {
+  if (currentTime.toFixed(0) == 4) {
     document.getElementById("ad").style.display = "block";
   }
 
-  if (currentTime < 8) {
+  if (currentTime.toFixed(0) == 8) {
     document.getElementById("ad").style.display = "none";
   }
 });
