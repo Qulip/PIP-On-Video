@@ -23,18 +23,3 @@ let overlaysData = [
 player.overlay({
   overlays: overlaysData,
 });
-
-player.on("timeupdate", () => {
-  const currentTime = player.currentTime(); // 현재 진행 시간
-  // const duration = player.duration(); // 총 길이
-
-  document.getElementById("time").innerText = "현재 시간 : " + currentTime.toFixed(0);
-
-  if (currentTime.toFixed(0) == 4) {
-    document.getElementById("ad").style.display = "block";
-  }
-
-  if (currentTime.toFixed(0) == 8) {
-    document.getElementById("ad").style.display = "none";
-  }
-});
