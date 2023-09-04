@@ -20,19 +20,18 @@
     <link rel="stylesheet" type="text/css" href="static/css/index.css" />
   </head>
 
-  <body>
+  <body onselectstart="return false" ondragstart="return false">
     <div id="header"></div>
     <div class="container">
-      <button onclick="toggleAd()">Toggle Ad</button>
       <div class="row justify-content-center align-items-center">
-        <div id="videoDiv" class="col-md-10">
+        <div id="videoDiv" class="col-md-12">
           <div class="d-flex justify-content-center">
             <video id="myVideo" class="video-js vjs-default-skin"></video>
           </div>
         </div>
-        <div id="ad" class="col-md-2" style="color: white">
+        <div id="ad" class="col-md-2 hidden" style="color: white">
           <button onclick="toggleAd()">X</button>
-          <div id="adText"></div>
+          <div id="adText">현재 진행중인 광고가 없습니다.</div>
           <div id="adUrl"></div>
         </div>
       </div>

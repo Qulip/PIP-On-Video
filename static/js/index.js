@@ -7,22 +7,26 @@ const player = videojs("myVideo", {
   preload: "metadata",
 });
 
+let idx = 0;
+let show = 0;
 let overlaysData = [
   {
     content: "영상 속 여자가 입은 자켓이 궁금하면?",
     start: 3,
     end: 6,
     id: "jacket",
+    class: "jacket",
     text: "체크무늬 더블 버튼 자켓",
-    url: "#",
+    url: "<a href='#'>바로가기</a>",
   },
   {
     content: "영상 속 여자의 휴대폰이 궁금하면?",
     start: 9,
     end: 12,
     id: "cellphone",
+    class: "cellphone",
     text: "아이폰 SE 2세대 블랙",
-    url: "#",
+    url: "<a href='#'>바로가기</a>",
   },
 ];
 
@@ -31,12 +35,39 @@ player.overlay({
 });
 
 overlaysData.forEach((data) => {
-  let overlayElement = document.getElementById(data.id);
+  let overlayElement = document.getElementsByClassName(data.class);
 
-  overlayElement.addEventListener("click", () => {
-    document.getElementById("adText").innerText = data.text;
-    document.getElementById("adUrl").innerText = data.url;
+  overlayElement.item(0).addEventListener("click", () => {
+    toggleAd();
   });
+});
+
+player.on("overlayhide", function (e) {
+  var overlay = e.overlay; // 사라진 오버레이 객체
+
+  // 오버레이가 숨겨질 때 실행할 동작을 여기에 추가
+  console.log("오버레이가 숨겨집니다:", overlay);
+  // 사용자 지정 동작 추가 가능
+});
+
+player.on("timeupdate", () => {
+  const currentTime = player.currentTime();
+  const adText = document.getElementById("adText");
+  const adUrl = document.getElementById("adUrl");
+
+  if (idx != overlaysData.length) {
+    if (show == 0 && Math.floor(currentTime) == overlaysData[idx].start) {
+      show = 1;
+      adText.innerText = overlaysData[idx].text;
+      adUrl.innerHTML = overlaysData[idx].url;
+    }
+    if (show == 1 && Math.floor(currentTime) == overlaysData[idx].end) {
+      show = 0;
+      adText.innerText = "현재 진행중인 광고가 없습니다.";
+      adUrl.innerText = "";
+      idx = idx + 1;
+    }
+  }
 });
 
 function toggleAd() {
