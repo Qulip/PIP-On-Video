@@ -42,14 +42,6 @@ overlaysData.forEach((data) => {
   });
 });
 
-player.on("overlayhide", function (e) {
-  var overlay = e.overlay; // 사라진 오버레이 객체
-
-  // 오버레이가 숨겨질 때 실행할 동작을 여기에 추가
-  console.log("오버레이가 숨겨집니다:", overlay);
-  // 사용자 지정 동작 추가 가능
-});
-
 player.on("timeupdate", () => {
   const currentTime = player.currentTime();
   const adText = document.getElementById("adText");
