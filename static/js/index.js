@@ -72,7 +72,7 @@ player.on("timeupdate", () => {
 
 function toggleAd() {
   var adDiv = document.getElementById("ad");
-  var videoDiv = document.getElementById("videoDiv");
+  var videoDiv = document.getElementById("videoContainer");
 
   if (adDiv.classList.contains("hidden")) {
     adDiv.classList.remove("hidden");

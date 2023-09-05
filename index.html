@@ -31,14 +31,14 @@
       </nav>
     </div>
     <div class="container">
-      <div class="row justify-content-center align-items-center">
-        <div id="videoDiv" class="col-md-12">
+      <div id="player" class="row justify-content-center align-items-center">
+        <div id="videoContainer" class="col-md-12">
           <div class="d-flex justify-content-center">
             <video id="myVideo" class="video-js vjs-default-skin"></video>
           </div>
         </div>
-        <div id="ad" class="col-md-2 hidden" style="color: white">
-          <button onclick="toggleAd()">X</button>
+        <div id="ad" class="col-md-2 hidden">
+          <button id="toggleBtn" onclick="toggleAd()">X</button>
           <div id="adText">현재 진행중인 광고가 없습니다.</div>
           <div id="adUrl"></div>
         </div>
