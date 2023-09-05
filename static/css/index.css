@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://db.onlinewebfonts.com/c/13debb153828720a4378a671f57b0d72?family=NotoKR-Medium+Medium");
+
 body {
   background-color: black;
 }
@@ -23,17 +26,72 @@ body {
   font-size: 10px;
 }
 
+.nav-link {
+  font-family: "NotoKR-Medium Medium";
+  color: white;
+}
+
+.left-nav {
+  margin-top: 2px;
+  font-size: 18px;
+  box-sizing: border-box;
+}
+
+.left-nav:hover {
+  color: black;
+  background-color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.dropdown {
+  width: 68px;
+}
+
+.dropdown-menu {
+  font-family: "NotoKR-Medium Medium";
+  width: 68px;
+}
+
+.right-nav {
+  font-size: 12px;
+}
+
+.right-nav-border {
+  border: 1px solid #ccc;
+}
+
+.right-nav:hover {
+  color: white;
+}
+
+#searchImage {
+  margin-left: 10px;
+}
+
+#header {
+  margin-top: 13px;
+  margin-bottom: 30px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
 #ad {
   height: 100%;
   color: black;
-  background-color: gainsboro;
+  background-color: rgba(180, 180, 180, 0.8);
   border-radius: 10px;
 }
 
 /* 16:9 비율을 유지하기 위한 높이 설정 */
 #player {
-  height: 540px;
+  height: 720px;
 }
 
-#toggleBtn:hover {
+#toggleBtn:after {
+  font-size: 20px;
+  content: "\00d7";
 }

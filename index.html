@@ -15,8 +15,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-    <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
     <link rel="stylesheet" type="text/css" href="static/css/index.css" />
   </head>
 
@@ -27,6 +25,73 @@
           <a class="navbar-brand" href="#">
             <image src="./static/img/mbc-logo.png"></image>
           </a>
+          <div class="collapse navbar-collapse" id="leftNavBar">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle left-nav" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">TV </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">드라마</a></li>
+                  <li><a class="dropdown-item" href="#">예능</a></li>
+                  <li><a class="dropdown-item" href="#">시사교양</a></li>
+                  <li><a class="dropdown-item" href="#">스포츠</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link left-nav">라디오</div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link left-nav" href="#">뉴스</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link left-nav" href="#">연예</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link left-nav" href="#">라이프</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link left-nav" href="#">영화</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link left-nav" href="#">지금무료</a>
+              </li>
+            </ul>
+            <a class="navbar-brand" id="searchImage" href="#">
+              <image src="./static/img/lnb-search.png"></image>
+            </a>
+          </div>
+          <div id="rightNavBar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link right-nav" href="#">로그인</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link right-nav" href="#">이용권</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link right-nav" href="#">이벤트</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link right-nav" href="#">보도자료</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link right-nav" href="#">장애인서비스</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link right-nav right-nav-border" href="#">온에어</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link right-nav right-nav-border">
+                  <image src="./static/img/nav_mbic.png"></image>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link right-nav right-nav-border" href="#">편성표</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link right-nav right-nav-border" href="#">클립</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </div>
@@ -38,7 +103,9 @@
           </div>
         </div>
         <div id="ad" class="col-md-2 hidden">
-          <button id="toggleBtn" onclick="toggleAd()">X</button>
+          <div id="toggleDiv" class="d-flex flex-column justify-content-center align-items-end">
+            <a id="toggleBtn" onclick="toggleAd()"></a>
+          </div>
           <div id="adText">현재 진행중인 광고가 없습니다.</div>
           <div id="adUrl"></div>
         </div>
