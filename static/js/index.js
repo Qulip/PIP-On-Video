@@ -1,9 +1,11 @@
 const player = videojs("myVideo", {
-  sources: [{ src: "./static/video/video.mp4", type: "video/mp4" }],
-  poster: "./static/img/thumbnail.png",
+  // sources: [{ src: "./static/video/video.mp4", type: "video/mp4" }],
+  sources: [{ type: "video/youtube", src: "https://www.youtube.com/watch?v=qShkh1n70t8" }],
+  // youtube: { iv_load_policy: 1 },
+  poster: "./static/img/thumbnail.jpg",
   controls: true,
   playsinline: true,
-  muted: true,
+  autoplay: "muted",
   preload: "metadata",
 });
 

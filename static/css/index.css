@@ -68,6 +68,11 @@ body {
   color: white;
 }
 
+.video-js {
+  width: 1280px;
+  height: 720px;
+}
+
 #searchImage {
   margin-left: 10px;
 }
