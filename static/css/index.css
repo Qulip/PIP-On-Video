@@ -1,10 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://db.onlinewebfonts.com/c/13debb153828720a4378a671f57b0d72?family=NotoKR-Medium+Medium");
+@import url("https://db.onlinewebfonts.com/c/8d989ff4b83af705559067c0fc83d131?family=NotoKR-DemiLight+DemiLight");
 
 body {
   background-color: black;
+  /* background-color: white; */
 }
 
+button {
+  border: none;
+}
+
+.container {
+  width: 1280px;
+}
 .hidden {
   display: none;
 }
@@ -61,7 +70,7 @@ body {
 }
 
 .right-nav-border {
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .right-nav:hover {
@@ -69,8 +78,14 @@ body {
 }
 
 .video-js {
-  width: 1280px;
-  height: 720px;
+  width: 1218px;
+  height: 685.125px;
+  /* width: 1280px;
+  height: 720px; */
+}
+
+#wrap {
+  min-width: 1340px;
 }
 
 #searchImage {
@@ -78,10 +93,12 @@ body {
 }
 
 #header {
-  margin-top: 13px;
-  margin-bottom: 30px;
-  margin-left: 60px;
-  margin-right: 60px;
+  background: url("../img/nav-bg-black.png");
+  height: 88px;
+  padding-top: 13px;
+  padding-bottom: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 #ad {
@@ -93,10 +110,114 @@ body {
 
 /* 16:9 비율을 유지하기 위한 높이 설정 */
 #player {
-  height: 720px;
+  padding-top: 10px;
+  height: 685.125px;
 }
 
 #toggleBtn:after {
   font-size: 20px;
   content: "\00d7";
+}
+
+#vodInfo {
+  padding-top: 33px;
+}
+
+#ch-title {
+  /* display: inline-block; */
+  line-height: 20px;
+  padding-left: 26px;
+  overflow: hidden;
+  color: #ced4da;
+  font-size: 17px;
+  background: url("../img/ico-mbic.png") left top no-repeat;
+  font-family: "NotoKR-Medium Medium";
+}
+
+#ch-home {
+  margin-left: 11px;
+  margin-bottom: 5px;
+  padding-left: 22px;
+  color: #ced4da;
+  font-size: 17px;
+  background: url("../img/ch_home.png") no-repeat left center;
+  font-family: "NotoKR-Medium Medium";
+  text-decoration: none;
+}
+
+#ch-home:hover {
+  text-decoration: underline;
+}
+
+#ch-vod {
+  margin-left: 11px;
+  padding-left: 22px;
+  color: #ced4da;
+  font-size: 17px;
+  background: url("../img/ch_vod.png") no-repeat left center;
+  font-family: "NotoKR-Medium Medium";
+  text-decoration: none;
+}
+
+#ch-vod:hover {
+  text-decoration: underline;
+}
+
+#vodInfo-Info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#vodTitle {
+  flex: 1;
+  display: inline;
+  padding: 15px 0 35px;
+  color: #fff;
+  font-size: 40px;
+  line-height: 1.2;
+  width: 900px;
+  font-family: "NotoKR-Medium Medium";
+  font-weight: 400;
+  letter-spacing: -0.075em;
+}
+
+#vodTime {
+  font-size: 20px;
+  font-family: "NotoKR-DemiLight DemiLight";
+  color: #bababa;
+  display: inline-block;
+  margin-left: 20px;
+  vertical-align: middle;
+  letter-spacing: -1px;
+}
+
+#vodInfo-social {
+  display: inline;
+}
+
+#liveTalk {
+  margin-left: 11px;
+  border: 1px solid #323232;
+  float: left;
+}
+
+#liveTalkButton {
+  width: 196px;
+  height: 72px;
+  text-indent: -9999px;
+  background: url("../img/ico-livetalk.png") no-repeat center center;
+}
+
+#shareSNS {
+  margin-left: 11px;
+  border: 1px solid #323232;
+  float: left;
+}
+
+#shareSNSButton {
+  width: 68px;
+  height: 72px;
+  text-indent: -9999px;
+  background: url("../img/btn-share.png") right center no-repeat;
 }
