@@ -73,14 +73,6 @@ player.on("timeupdate", () => {
   }
 });
 
-/*
-  일시정시 후 다시 나타낼 때 ! 만 뜨고 안뜨는 오류
-  방법을 모색해야함
-*/
-player.on("pause", () => {
-  show = 0;
-});
-
 function toggleAd() {
   var adDiv = document.getElementById("ad");
   var videoDiv = document.getElementById("videoContainer");
