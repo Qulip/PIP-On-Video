@@ -2,6 +2,7 @@
 <html lang="ko">
   <head>
     <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/videojs-overlay@3.1.0/dist/videojs-overlay.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/videojs-youtube@3.0.1/dist/Youtube.min.js"></script>
@@ -107,8 +108,20 @@
           <div id="toggleDiv" class="d-flex flex-column justify-content-center align-items-end">
             <a id="toggleBtn" onclick="toggleAd()"></a>
           </div>
-          <div id="adText">현재 진행중인 광고가 없습니다.</div>
-          <div id="adUrl"></div>
+          <div id="toggleAd">
+            <div id="nowAd"></div>
+            <div id="adList"></div>
+          </div>
+        </div>
+      </div>
+      <div id="vodInfo">
+        <div id="vodInfo-header">
+          <span id="ch-title">나 혼자 산다</span>
+          <a id="ch-home" href="https://program.imbc.com/singlelife">홈페이지</a>
+          <a id="ch-vod" href="https://playvod.imbc.com/templete/VodList?bid=1002831100000100000">다시보기</a>
+        </div>
+        <div>
+          <div id="">[511회] 나 혼자 산다 자취 감췄던 전현무의 무카 세차날🚘무첨지의 운수 좋은 날 & 먹기 위해 사는 남자 이장우..🚫물 단식 디톡스 시작</div>
         </div>
       </div>
     </div>

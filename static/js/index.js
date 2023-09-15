@@ -13,55 +13,72 @@ let idx = 0;
 let show = 0;
 let overlaysData = [
   {
-    content: "영상 속 여자가 입은 자켓이 궁금하면?",
-    start: 3,
-    end: 6,
-    id: "jacket",
-    class: "jacket",
-    text: "체크무늬 더블 버튼 자켓",
-    url: "<a href='#'>바로가기</a>",
+    content: "전현무가 착용하고 있는 헤드셋이 궁금하다면?",
+    start: 15,
+    end: 25,
+    text: "<div class='adListName'>에어팟 맥스</div>",
+    url: "<a class='adListLink href='https://www.apple.com/kr/airpods-max/'>바로가기</a>",
   },
   {
-    content: "영상 속 여자의 휴대폰이 궁금하면?",
-    start: 9,
-    end: 12,
-    id: "cellphone",
-    class: "cellphone",
-    text: "아이폰 SE 2세대 블랙",
-    url: "<a href='#'>바로가기</a>",
+    content: "전현무가 간 바다가 궁금하다면??",
+    start: 37,
+    end: 51,
+    text: "<div class='adListName'>탄도항</div>",
+    url: "<a class='adListLink href='#'>바로가기</a>",
   },
 ];
 
 player.overlay({
-  overlays: overlaysData,
+  overlays: [
+    {
+      content: "<div id='overlayText'>&nbsp;!&nbsp;</div>",
+      start: "play",
+      end: "pause",
+    },
+  ],
 });
 
-overlaysData.forEach((data) => {
-  let overlayElement = document.getElementsByClassName(data.class);
-
-  overlayElement.item(0).addEventListener("click", () => {
+document
+  .getElementsByClassName("vjs-overlay")
+  .item(0)
+  .addEventListener("click", () => {
     toggleAd();
   });
+
+$(() => {
+  let adText = "<div id='adListHeader'>전체 광고 모음</div>";
+  overlaysData.forEach((data) => {
+    adText = adText + data.text + data.url;
+  });
+  $("#adList").html(adText);
+  console.log(adText);
 });
 
 player.on("timeupdate", () => {
   const currentTime = player.currentTime();
-  const adText = document.getElementById("adText");
-  const adUrl = document.getElementById("adUrl");
 
   if (idx != overlaysData.length) {
+    console.log(currentTime.toFixed(3) + " " + idx);
     if (show == 0 && Math.floor(currentTime) == overlaysData[idx].start) {
       show = 1;
-      adText.innerText = overlaysData[idx].text;
-      adUrl.innerHTML = overlaysData[idx].url;
+      $("#overlayText").html(overlaysData[idx].content);
+      $("#nowAd").html(overlaysData[idx].text + overlaysData[idx].url);
     }
     if (show == 1 && Math.floor(currentTime) == overlaysData[idx].end) {
       show = 0;
-      adText.innerText = "현재 진행중인 광고가 없습니다.";
-      adUrl.innerText = "";
-      idx = idx + 1;
+      $("#overlayText").html("&nbsp;!&nbsp;");
+      $("#nowAd").html("");
+      idx++;
     }
   }
+});
+
+/*
+  일시정시 후 다시 나타낼 때 ! 만 뜨고 안뜨는 오류
+  방법을 모색해야함
+*/
+player.on("pause", () => {
+  show = 0;
 });
 
 function toggleAd() {
