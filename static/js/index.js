@@ -13,8 +13,8 @@ let idx = 0;
 let show = 0;
 let overlaysData = [
   {
-    content: "전현무가 착용하고 있는 헤드셋이 궁금하다면?",
-    start: 15,
+    content: "전현무가 목에서 못 빼는 저건?",
+    start: 12,
     end: 25,
     title: "<div class='adListName'>▶에어팟 맥스</div>",
     text: "<div class='adListText'>감동적인 하이파이 오디오와 AirPods 특유의 매혹적인 사용성의 완벽한 조합.</div>",
@@ -24,8 +24,8 @@ let overlaysData = [
       "</div>",
   },
   {
-    content: "전현무가 간 바다가 궁금하다면??",
-    start: 37,
+    content: "서울 근교 일몰 맛집! 나도 가볼까?",
+    start: 38,
     end: 51,
     title: "<div class='adListName'>▶탄도항</div>",
     text: "<div class='adListText'>하루 두 번의 썰물 때 탄도와 누에섬 사이에 갯벌이 드러나 바다가 갈라지는 신비한 현상을 볼 수 있다.</div>",
@@ -35,7 +35,7 @@ let overlaysData = [
       "</div>",
   },
   {
-    content: "이장우가 마시는 물이 궁금하다면??",
+    content: "이장우의 생명수",
     start: 57,
     end: 67,
     title: "<div class='adListName'>▶삼다수</div>",
@@ -50,7 +50,7 @@ let overlaysData = [
 player.overlay({
   overlays: [
     {
-      content: "<div id='overlayText'>&nbsp;!&nbsp;</div>",
+      content: "<div id='overlayText'><image id='tagimg' src='./static/img/tagimg.png'></image></div>",
       start: "play",
       end: "pause",
     },
@@ -87,7 +87,7 @@ player.on("timeupdate", () => {
     }
     if (show == 1 && Math.floor(currentTime) == overlaysData[idx].end) {
       show = 0;
-      $("#overlayText").html("&nbsp;!&nbsp;");
+      $("#overlayText").html("<image id='tagimg' src='./static/img/tagimg.png'></image>");
       $("#adListItem" + idx).removeClass("hidden");
       $("#nowAd").html("");
       idx++;
@@ -96,8 +96,8 @@ player.on("timeupdate", () => {
 });
 
 function toggleAd() {
-  var adDiv = document.getElementById("ad");
-  var videoDiv = document.getElementById("videoContainer");
+  let adDiv = document.getElementById("ad");
+  let videoDiv = document.getElementById("videoContainer");
 
   if (adDiv.classList.contains("hidden")) {
     adDiv.classList.remove("hidden");
