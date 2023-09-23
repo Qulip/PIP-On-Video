@@ -13,7 +13,7 @@ let idx = 0;
 let show = 0;
 let overlaysData = [
   {
-    content: "전현무가 목에서 못 빼는 저건?",
+    content: "'트민남' 전현무의 MZ 따라잡기 템!?",
     start: 12,
     end: 25,
     title: "<div class='adListName'>▶에어팟 맥스</div>",
@@ -35,7 +35,7 @@ let overlaysData = [
       "</div>",
   },
   {
-    content: "이장우의 생명수",
+    content: "맛잘알 '팜장우'가 선택한 그 물!",
     start: 57,
     end: 67,
     title: "<div class='adListName'>▶삼다수</div>",
